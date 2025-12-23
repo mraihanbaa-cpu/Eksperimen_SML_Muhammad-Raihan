@@ -1,6 +1,8 @@
 name: Train Model Workflow
 
-on: [push]
+on: 
+  push:
+    branches: [main]
 
 jobs:
   build-and-train:
@@ -23,4 +25,5 @@ jobs:
 
       # LANGKAH 4: Jalankan Script (Dataset sudah tersedia secara lokal)
       - name: Run Training Script
-        run: Download/automate_muhammad raihan.py
+        run: |
+          preprocessing/automate_muhammad_raihan.py
