@@ -1,0 +1,26 @@
+name: Train Model Workflow
+
+on: [push]
+
+jobs:
+  build-and-train:
+    runs-on: ubuntu-latest
+    steps:
+      # LANGKAH 1: Ambil semua file dari repo (termasuk dataset)
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # LANGKAH 2: Setup Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+
+      # LANGKAH 3: Install Library
+      - name: Install Dependencies
+        run: |
+          pip install pandas scikit-learn mlflow
+
+      # LANGKAH 4: Jalankan Script (Dataset sudah tersedia secara lokal)
+      - name: Run Training Script
+        run: python modelling/train_model.py
