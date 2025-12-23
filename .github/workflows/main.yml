@@ -26,4 +26,4 @@ jobs:
       # LANGKAH 4: Jalankan Script (Dataset sudah tersedia secara lokal)
       - name: Run Training Script
         run: |
-          preprocessing/automate_muhammad_raihan.py
+          python preprocessing/automate_muhammad_raihan.py
